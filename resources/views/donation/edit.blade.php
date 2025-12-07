@@ -34,13 +34,7 @@
                         <label class="form-label">Purpose</label>
                         <input type="text" name="purpose" class="form-control" value="{{ $donationModel->purpose }}" required>
                     </div>
-
-                    <!-- Category ID -->
-                    <div class="mb-3">
-                        <label class="form-label">Category ID</label>
-                        <input type="number" name="category_id" class="form-control" value="{{ $donationModel->category_id }}" required>
-                    </div>
-
+                    
                     <!-- Buttons -->
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-success">

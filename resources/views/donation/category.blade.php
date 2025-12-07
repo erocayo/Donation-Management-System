@@ -33,8 +33,6 @@
                         <tr>
                             <th>Name</th>
                             <th>Description</th>
-                            <th>Date Created</th>
-                            <th>Date Updated</th>
                             <th class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -44,8 +42,6 @@
                         <tr>
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->description }}</td>
-                            <td>{{ $row->created_at }}</td>
-                            <td>{{ $row->updated_at }}</td>
                             <td class="text-center">
                                 <a href="{{ url('/donation/category/' . $row->category_id . '/edit') }}" 
                                    class="btn btn-sm btn-warning">

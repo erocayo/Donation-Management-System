@@ -26,14 +26,16 @@
                                 <th>Amount</th>
                                 <th>Date Donated</th>
                                 <th>Purpose</th>
+                                <th>Staff Id</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($donation as $d)
                             <tr>
                                 <td>₱{{ number_format($d->amount, 2) }}</td>
-                                <td>{{ $d->date_donated }}</td>
+                                <td>{{ $d->created_at }}</td>
                                 <td>{{ $d->purpose }}</td>
+                                <td>{{ $d->staff_id }}</td>
                             </tr>
                             @endforeach
                         </tbody>

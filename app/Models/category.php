@@ -29,7 +29,6 @@ public function Update_Category($categoryId, $data)
             ->update([
                 'name' => $data['name'],
                 'description' => $data['description'],
-                'updated_at' => now()
             ]);
     }
 }

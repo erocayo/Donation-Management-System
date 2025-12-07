@@ -44,7 +44,7 @@ public function donation_add()
             'purpose'      => 'required|string',
             'category_id'  => 'required|integer'
         ]);
-
+        
         $donationModel = new donation_records();
         $donationModel->Set_New_Donation_Record($validated, $finance_staff_id);
 
@@ -66,7 +66,6 @@ public function donation_add()
         $validated = $request->validate([
             'amount'       => 'required|numeric|min:0',
             'purpose'      => 'required|string',
-            'category_id'  => 'required|integer'
         ]);
 
         $donationModel = new donation_records();

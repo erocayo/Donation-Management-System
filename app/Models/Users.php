@@ -19,7 +19,8 @@ class Users extends Model
         'password',
         'phone',
         'address',
-        'role'
+        'role',
+        'created_by'
     ];
     
     public function Get_User_By_Username($username){
@@ -48,7 +49,7 @@ public function Get_User_By_Id($userId)
     $rows = DB::select("
         SELECT user_id, name, username, email, phone, address, role
         FROM users
-        WHERE user_id = ?
+        WHER    E user_id = ?
         LIMIT 1
     ", [$userId]);
 
@@ -72,7 +73,7 @@ public function Update_Donor($userId, $data)
     }
 
     public function Get_Donor(){
-        return DB::select('SELECT user_id, username FROM users WHERE role = ?', ['donor']);
+        return DB::select('SELECT user_id, username FROM users WHERE role = ?', ['Donor']);
     }
     public function Get_All_Users(){
     return DB::select('SELECT * FROM users');
@@ -87,10 +88,8 @@ public function Create_User($data)
 public function Update_User($userId, $data)
 {
     // Only hash password if present
-    if (!empty($data['password'])) {
-        $data['password'] = bcrypt($data['password']);
-    } else {
-        unset($data['password']); // remove so it won't overwrite
+      if (empty($data['password'])) {
+        unset($data['password']);
     }
     $data['updated_at'] = now();
     return DB::table('users')->where('user_id', $userId)->update($data);

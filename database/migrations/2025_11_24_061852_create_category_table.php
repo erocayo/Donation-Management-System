@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id('category_id');
             $table->enum('name', ['Education', 'Food', 'Clothes', 'Medical']);
             $table->string('description');
-            $table->timestamps();
         });
     }
 

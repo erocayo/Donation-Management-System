@@ -32,7 +32,6 @@ public function Get_Donation_Records()
         'purpose'     => $data['purpose'],
         'staff_id'    => $finance_staff_id,
         'created_at'  => now(),
-        'updated_at'  => now()
     ]);
 
     return $donationId;
@@ -54,7 +53,6 @@ public function Update_Donation_Record($donationId, $data)
         ->update([
             'amount'      => $data['amount'],
             'purpose'     => $data['purpose'],
-            'category_id' => $data['category_id'], // make sure this is included
             'updated_at'  => now()
         ]);
 }

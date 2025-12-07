@@ -35,7 +35,7 @@ public function Create_Account(Request $request)
         'address'  => 'nullable|string|max:255',
         'role'     => 'required|in:Donor,Finance Staff,Admin',
     ]);
-
+    $validated['created_by'] = $request->session()->get('user_id');
     // Call the model function
     $model = new Users();
     $model->Create_User($validated);
@@ -115,5 +115,21 @@ public function edit_category($category_id)
         return view('admin/donation/list', compact('data'));
     }
 
+        public function delete_record($donationId)
+    {
+        $model = new donation_records();
+        $donationModel = $model->Get_Specific_Donation_Record($donationId);
+
+        return view('admin/donation/delete', compact('donationModel'));
+    }
+
+
+    public function destroy_record($donationId)
+    {
+        $donationModel = new donation_records();
+        $donationModel->Delete_Donation_Record($donationId);
+
+        return redirect('admin/donation/list'); // ← FIXED
+    }
     
 }

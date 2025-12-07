@@ -37,6 +37,7 @@
                             <th>Amount</th>
                             <th>Purpose</th>
                             <th>Category</th>
+                            <th>Staff Id</th>
                             <th>Date Created</th>
                             <th>Date Updated</th>
                             <th class="text-center">Action</th>
@@ -50,13 +51,13 @@
                             <td>₱{{ number_format($row->amount, 2) }}</td>
                             <td>{{ $row->purpose }}</td>
                             <td>{{ $row->category_name }}</td>
+                            <td>{{ $row->staff_id }}</td>
                             <td>{{ $row->created_at }}</td>
                             <td>{{ $row->updated_at }}</td>
 
                             <td class="text-center">
                                 <a href="{{ url('/donation/' . $row->donation_id . '/delete') }}" 
-                                   class="btn btn-sm btn-danger"
-                                   onclick="return confirm('Are you sure you want to delete this donation?');">
+                                   class="btn btn-sm btn-danger">
                                     <i class="bi bi-trash"></i>
                                 </a>
                             </td>

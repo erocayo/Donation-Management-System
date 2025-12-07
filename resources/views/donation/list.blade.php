@@ -33,6 +33,7 @@
                             <th>Amount</th>
                             <th>Purpose</th>
                             <th>Category</th>
+                            <th>Staff Id</th>
                             <th>Date Created</th>
                             <th>Date Updated</th>
                             <th class="text-center">Action</th>
@@ -45,6 +46,7 @@
                             <td>₱{{ number_format($row->amount, 2) }}</td>
                             <td>{{ $row->purpose }}</td>
                             <td>{{ $row->category_name }}</td>
+                            <td>{{ $row->staff_id }}</td>
                             <td>{{ $row->created_at }}</td>
                             <td>{{ $row->updated_at }}</td>
                             <td class="text-center">

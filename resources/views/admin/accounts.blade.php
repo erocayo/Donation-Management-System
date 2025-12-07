@@ -44,6 +44,7 @@
                                 <th>Phone</th>
                                 <th>Address</th>
                                 <th>Role</th>
+                                <th>Admin Id</th>
                                 <th>Created At</th>
                                 <th>Updated At</th>
                                 <th class="text-center">Action</th>
@@ -60,6 +61,7 @@
                                 <td>{{ $user->phone }}</td>
                                 <td>{{ $user->address }}</td>
                                 <td>{{ $user->role }}</td>
+                                <td>{{ $user->created_by }}</td>
                                 <td>{{ $user->created_at }}</td>
                                 <td>{{ $user->updated_at }}</td>
 

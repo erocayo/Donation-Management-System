@@ -53,8 +53,7 @@
                                 <a href="{{ url('/donation/' . $row->donation_id . '/edit') }}" class="btn btn-sm btn-warning mb-1">
                                     <i class="bi bi-pencil-square"></i> Update
                                 </a>
-                                <a href="{{ url('/donation/' . $row->donation_id . '/delete') }}" class="btn btn-sm btn-danger mb-1"
-                                   onclick="return confirm('Are you sure you want to delete this donation?');">
+                                <a href="{{ url('/donation/' . $row->donation_id . '/delete') }}" class="btn btn-sm btn-danger mb-1">
                                     <i class="bi bi-trash"></i> Delete
                                 </a>
                                 <a href="{{ url('/donation/' . $row->donation_id . '/receipt') }}" class="btn btn-sm btn-primary mb-1">

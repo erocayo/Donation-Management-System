@@ -49,7 +49,7 @@ public function Get_User_By_Id($userId)
     $rows = DB::select("
         SELECT user_id, name, username, email, phone, address, role
         FROM users
-        WHER    E user_id = ?
+        WHERE user_id = ?
         LIMIT 1
     ", [$userId]);
 
